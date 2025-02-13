@@ -30,6 +30,9 @@ theme:
     - navigation.indexes
     - content.action.edit
     - content.action.view
+    - content.code.copy
+    - content.code.annotate
+    - content.zoom.click
 
 plugins: 
   - search
@@ -46,6 +49,16 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+          # Global Mermaid theme configuration
+          global_mermaid_config:
+            theme: default
+            themeVariables:
+              primaryColor: '#ff5722'
+              primaryTextColor: '#fff'
+              primaryBorderColor: '#333'
+              lineColor: '#333'
+              secondaryColor: '#fff'
+              tertiaryColor: '#fff'
   - pymdownx.tabbed:
       alternate_style: true
   - admonition

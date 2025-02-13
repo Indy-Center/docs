@@ -9,49 +9,81 @@ This guide covers our k3s cluster setup and commonly used commands for interacti
 
 Our cluster runs on [k3s](https://k3s.io), a lightweight Kubernetes distribution, deployed across four nodes named after pioneering women in aviation and computer science.
 
+### Node Architecture
+
+```mermaid
+flowchart TB
+    %% Styling
+    classDef node fill:#ff5722,stroke:#333,stroke-width:2px,color:white;
+
+    %% Nodes
+    lovelace["Lovelace<br/>(Control Plane)"]:::node
+    hopper["Hopper<br/>(Operations)"]:::node
+    beverly["Beverly<br/>(Worker)"]:::node
+    theresa["Theresa<br/>(Worker)"]:::node
+
+    %% Relationships
+    lovelace -. "schedules<br/>workloads" .-> hopper & beverly & theresa
+```
+
+### Core Services
+
 ```mermaid
 flowchart TB
     %% Styling
     classDef node fill:#ff5722,stroke:#333,stroke-width:2px,color:white;
     classDef service fill:#fff,stroke:#333,stroke-width:2px;
 
-    %% Operations Nodes
-    subgraph ops["Operations"]
+    %% Operations Node
+    hopper["Hopper<br/>(Operations)"]:::node
+
+    %% Core Services
+    subgraph core["Core Services"]
         direction TB
-        lovelace["Lovelace<br/>(Control Plane)"]:::node
-        hopper["Hopper<br/>(Ops Node)"]:::node
-
-        %% Core Services
-        subgraph core["Core Services"]
-            direction LR
-            argocd["ArgoCD"]:::service
-            monitoring["Prometheus<br/>& Grafana"]:::service
-            secrets["Sealed<br/>Secrets"]:::service
-        end
-
-        %% Connect services to ops node
-        hopper --> core
+        argocd["ArgoCD<br/>GitOps CD"]:::service
+        monitoring["Prometheus & Grafana<br/>Monitoring"]:::service
+        secrets["Sealed Secrets<br/>Secret Management"]:::service
+        traefik["Traefik<br/>Ingress Controller"]:::service
+        certman["Cert Manager<br/>TLS Certificates"]:::service
     end
+
+    %% Relationships
+    hopper --> core
+```
+
+### Workload Organization
+
+```mermaid
+flowchart TB
+    %% Styling
+    classDef node fill:#ff5722,stroke:#333,stroke-width:2px,color:white;
+    classDef service fill:#fff,stroke:#333,stroke-width:2px;
 
     %% Worker Nodes
     subgraph workers["Application Workers"]
         direction LR
         beverly["Beverly"]:::node
         theresa["Theresa"]:::node
-
-        %% Workload types
-        subgraph apps["Workloads"]
-            direction TB
-            prod["Production"]:::service
-            dev["Development"]:::service
-        end
-
-        %% Connect workers to workloads
-        beverly & theresa --> apps
     end
 
-    %% Control plane connections
-    lovelace -. manages .-> hopper & beverly & theresa
+    %% Workloads
+    subgraph envs["Environments"]
+        direction TB
+        prod["Production Namespace<br/>*.zid-internal.com"]:::service
+        dev["Development Namespace<br/>*.dev.zid-internal.com"]:::service
+    end
+
+    %% Core Services that interact with workloads
+    subgraph core["Core Services"]
+        direction LR
+        argocd["ArgoCD"]:::service
+        traefik["Traefik"]:::service
+    end
+
+    %% Relationships
+    workers --> envs
+    argocd -. "deploys" .-> envs
+    traefik -. "routes" .-> envs
 ```
 
 ### Core Components
