@@ -8,9 +8,16 @@
       "files": "*.md",
       "options": {
         "parser": "markdown",
-        "proseWrap": "preserve",
         "printWidth": 120,
-        "tabWidth": 2
+        "tabWidth": 4,
+        "embeddedLanguageFormatting": "off",
+        "singleQuote": false,
+        "bracketSpacing": false,
+        "useTabs": false,
+        "htmlWhitespaceSensitivity": "css",
+        "proseWrap": "preserve",
+        "requirePragma": false,
+        "insertPragma": false
       }
     }
   ]

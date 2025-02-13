@@ -1,7 +1,5 @@
 # Accessing Kubernetes
 
-Our infrastructure runs [k3s](https://k3s.io/) which is a lightweight [Kubernetes](https://kubernetes.io/) distribution. This guide will help you get setup with accessing Kubernetes.
-
 Most people shouldn't need to access the cluster directly. We're using the GitOps paradigm along with [Argo CD](https://argocd.zid-internal.com). Members of the [Indy-Center GitHub Organization](https://github.com/Indy-Center) should have access to Argo CD.
 
 ## Setting up Kubernetes Access

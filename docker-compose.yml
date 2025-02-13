@@ -11,6 +11,7 @@ services:
       - "3000:8000"
     volumes:
       - .:/docs
+
     command: mkdocs serve -a 0.0.0.0:8000
 
   docs:

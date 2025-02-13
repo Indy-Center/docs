@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to the Indy Center Tech Team! Whether you’re a seasoned volunteer or completely new to our community, this guide is here to help you hit the ground running.
+Welcome to the Indy Center Tech Team! Whether you're seasoned or completely new, this guide is here to help you hit the ground running.
 
 !!! question "Not a Member of Our Tech Team?"
 
@@ -14,11 +14,17 @@ Our approach is built on fast iterative development, modern frameworks, and open
 
 <div class="grid cards" markdown="1">
 
-- :octicons-light-bulb-16:{ .lg .middle } **Our Philosophy**  
-  We’re a volunteer team that values simplicity, transparency, and continuous improvement. We believe in iterating fast, learning quickly, and sharing our knowledge with the community.
+-   :octicons-light-bulb-16:{ .lg .middle } **Our Philosophy**
 
-- :octicons-repo-16:{ .lg .middle } **GitOps & Open Source**  
-  We manage everything as code! Our GitOps approach means every change is tracked via Git, enabling transparency and collaboration. We strive to keep our work as open source as possible, inviting contributions from the community.
+    ***
+
+    We're a volunteer team that values simplicity, transparency, and continuous improvement. We believe in iterating fast, learning quickly, and sharing our knowledge with the community.
+
+-   :octicons-repo-16:{ .lg .middle } **GitOps & Open Source**
+
+    ***
+
+    We manage everything as code! Our GitOps approach means every change is tracked via Git, enabling transparency and collaboration. We strive to keep our work as open source as possible, inviting contributions from the community.
 
 </div>
 
@@ -38,14 +44,16 @@ Have you joined the [Indy Center GitHub organization](https://github.com/indy-ce
 
 Do you need access to Kubernetes or the servers? S3 buckets and other resources can be granted as needed.
 
+{% include 'kubernetes-access.md' %}
+
 ## Next Steps
 
 After confirming the above, here are a few follow up steps:
 
-- **Explore Our Documentation:**  
-  Familiarize yourself with our tools and best practices.
+-   **Explore Our Documentation:**  
+    Familiarize yourself with our tools and best practices.
 
-- **Get Involved:**  
-  Join discussions in our Discord channels, ask questions, and start contributing to projects.
+-   **Get Involved:**  
+    Join discussions in our Discord channels, ask questions, and start contributing to projects.
 
 Welcome aboard!
