@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  docs-dev:
+    container_name: mkdocs-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    ports:
+      - "3000:8000"
+    volumes:
+      - .:/docs
+    command: mkdocs serve -a 0.0.0.0:8000
+
+  docs:
+    container_name: mkdocs-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"

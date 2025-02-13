@@ -1,0 +1,17 @@
+{
+  "proseWrap": "preserve",
+  "markdown": {
+    "listItemIndent": "one"
+  },
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown",
+        "proseWrap": "preserve",
+        "printWidth": 120,
+        "tabWidth": 2
+      }
+    }
+  ]
+} 
