@@ -19,11 +19,11 @@ flowchart TB
     %% Nodes
     lovelace["Lovelace<br/>(Control Plane)"]:::node
     hopper["Hopper<br/>(Operations)"]:::node
-    beverly["Beverly<br/>(Worker)"]:::node
+    beverley["Beverley<br/>(Worker)"]:::node
     theresa["Theresa<br/>(Worker)"]:::node
 
     %% Relationships
-    lovelace -. "schedules<br/>workloads" .-> hopper & beverly & theresa
+    lovelace -. "schedules<br/>workloads" .-> hopper & beverley & theresa
 ```
 
 ### Core Services
@@ -62,7 +62,7 @@ flowchart TB
     %% Worker Nodes
     subgraph workers["Application Workers"]
         direction LR
-        beverly["Beverly"]:::node
+        beverley["Beverley"]:::node
         theresa["Theresa"]:::node
     end
 
@@ -107,7 +107,7 @@ Each node in our cluster serves a specific purpose:
 
 -   **Lovelace (Control Plane)**: Manages the cluster state, running etcd and the Kubernetes control plane
 -   **Hopper (Operations)**: Dedicated to running our operational tools (ArgoCD, Prometheus, Grafana, etc.)
--   **Beverly & Theresa (Workers)**: Run our production and development workloads
+-   **Beverley & Theresa (Workers)**: Run our production and development workloads
 
 ## Key Concepts
 

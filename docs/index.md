@@ -8,7 +8,7 @@ We run our applications on a **[k3s](https://k3s.io)** cluster orchestrated with
 
 Our cluster consists of 4 nodes, each named after pioneering women in aviation and computer science:
 
--   **Beverly (Worker Node):** Named after [Beverly Bass](https://en.wikipedia.org/wiki/Beverley_Bass), the first female captain at American Airlines and one of the pilots who landed in Gander during 9/11, as portrayed in "Come From Away"
+-   **Beverley (Worker Node):** Named after [Beverley Bass](https://en.wikipedia.org/wiki/Beverley_Bass), the first female captain at American Airlines and one of the pilots who landed in Gander during 9/11, as portrayed in "Come From Away"
 
 -   **Theresa (Worker Node):** Named after Captain [Theresa Claiborne](https://en.wikipedia.org/wiki/Theresa_Claiborne), the first Black woman pilot in the Air Force and a trailblazing United Airlines captain with over 23,000 flight hours
 
