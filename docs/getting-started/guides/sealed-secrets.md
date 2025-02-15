@@ -13,6 +13,10 @@ Regular Kubernetes secrets are base64 encoded but not encrypted, making them uns
 2. Creating a `SealedSecret` resource that can be safely stored in Git
 3. Automatically decrypting secrets in the cluster using the private key
 
+!!! question "Too much work?"
+
+    You can use the [Sealed Secrets Web UI](https://secrets.zid-internal.com) to create a sealed secret. This tool will _not_ let you decrypt secrets.
+
 ## Prerequisites
 
 1. Install the `kubeseal` CLI tool by following the [official installation guide](https://github.com/bitnami-labs/sealed-secrets?tab=readme-ov-file#kubeseal)
